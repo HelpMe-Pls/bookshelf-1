@@ -1,8 +1,15 @@
 # Render a React App
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- Render `<App/>` with `react-18`:
+```tsx
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
+export {root}
+```
+- The default attribute `aria-label` is intended for use on i*nteractive elements*, or elements made to be interactive via other ARIA declarations, when/in case there is no appropriate text visible in the DOM that could be referenced as a label.
+- Use [`@reach/dialog`](https://reacttraining.com/reach-ui/dialog) to render a modal. [Setting its state](https://github.com/HelpMe-Pls/bookshelf-forked/blob/exercises/01-bootstrap/src/index.extra-1.js) with `enum` instead of the primitive `boolean` to embrace SoC design (i.e. if you set its state with `boolean`, you may get overlapped state from other components using that state).
+- Abstracting away `event.target.value` into a reusable function ([at 2:00](https://epicreact.dev/modules/build-an-epic-react-app/render-a-react-app-extra-credit-solution-02)) by destructuring the input fields with `event.target.elements` and then use `.value` on them.
 
 ## Background
 
