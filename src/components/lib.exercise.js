@@ -67,7 +67,7 @@ const Input = styled.input({
   padding: '8px 12px',
 })
 
-const FormGroup = styled.formGroup({
+const FormGroup = styled.form({
   display: 'flex',
   flexDirection: 'column',
 })
