@@ -1,7 +1,29 @@
 # Style React Components
 
 ## 📝 What I've learnt
--
+- Create a simple styled component with `emotion` ([at 1:45](https://epicreact.dev/modules/build-an-epic-react-app/add-styles-solution-01)).
+- Use `React.cloneElement` to pass in a component as a prop.
+- Enable ([at 2:30](https://epicreact.dev/modules/build-an-epic-react-app/add-styles-solution-03)) `emotion`'s inline styling for JSX elements (with its `css` prop) by adding:
+```typescript
+/** @jsx jsx */
+import {jsx} from '@emotion/core'
+import * as React from 'react'
+```  
+- [Labelling](https://epicreact.dev/modules/build-an-epic-react-app/add-styles-extra-credit-solution-01) generated CSS classNames from `emotion` by importing:
+```js
+import styled from '@emotion/styled/macro'
+```
+- [SoC and abstraction](https://epicreact.dev/modules/build-an-epic-react-app/add-styles-extra-credit-solution-02) for colors and media queries breakpoints by export them from a module:
+```js
+import * as colors from 'styles/colors'
+import * as mq from 'styles/media-queries'
+```
+- Make a styled component from a SVG icon by simply passing it as an argument to the `styled` method, e.g:
+```tsx
+const Spinner = styled(FaSpinner)({/* styles here */})
+```
+- Use [`keyframe`](https://www.geeksforgeeks.org/css-keyframes-rule/) to define animations.
+- The default `aria-label` attribute ([at 2:20](https://epicreact.dev/modules/build-an-epic-react-app/add-styles-extra-credit-solution-03)) is intended for use on interactive elements, or elements made to be interactive via other ARIA declarations, when there is no appropriate text visible in the DOM that could be referenced as a label.
 
 ## Background
 
