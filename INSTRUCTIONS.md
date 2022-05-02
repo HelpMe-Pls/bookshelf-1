@@ -1,8 +1,9 @@
 # Make HTTP Requests
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- Usage of `event.target.elements` ([at 1:20](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-01)) and `encodeURIComponent` (at 2:15).
+- Control *when* to run `useEffect`'s callback ([at 3:00](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-01)).
+- **When** to [abstract](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-02) a piece of functionality into a reusable module.
 
 ## Background
 

@@ -24,7 +24,7 @@ function DiscoverBooksScreen() {
     setStatus('loading')
     client(`books?query=${encodeURIComponent(query)}`).then(responseData => {
       setData(responseData)
-      setStatus('success')
+      setStatus('success') // this must be within the scope of the promise, otherwise it'd always be "success"
     })
   }, [query, queried])
 
