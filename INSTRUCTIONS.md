@@ -4,6 +4,8 @@
 - Usage of `event.target.elements` ([at 1:20](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-01)) and `encodeURIComponent` (at 2:15).
 - Control *when* to run `useEffect`'s callback ([at 3:00](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-01)).
 - **When** to [abstract](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-solution-02) a piece of functionality into a reusable module.
+- A caveat of `window.fetch` is that it won't reject your promise unless the network request is failed ([at 0:43](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-extra-credit-solution-01)).
+- Senior stuff/team work: using [their abstractions](https://epicreact.dev/modules/build-an-epic-react-app/make-http-requests-extra-credit-solution-02) to clean up your code.
 
 ## Background
 
