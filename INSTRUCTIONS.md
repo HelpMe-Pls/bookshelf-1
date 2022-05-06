@@ -3,7 +3,8 @@
 ## 📝 What I've learnt
 - The user doesn't want to submit their password every time they need to
 make a request for data. They want to be able to log into the application and
-then the application can continuously authenticate requests for them automatically. A common solution to this problem is to have a special limited use "**token**" which represents the user's *current session*. So, in order to authenticate the user, this token (which can be *anything* that **uniquely** identifies the user, but a common standard is to use a [JSON Web Token](https://jwt.io) (JWT)) *must be included* with every request the client makes. That way the token can be **invalidated** (in the case that it's lost or stolen) and the user doesn't have to change their password. They simply *re-authenticate* to get a fresh token.
+then the application can continuously authenticate requests for them automatically. A common solution to this problem is to have a special limited use "**token**" which represents the user's *current session*. 
+- In order to authenticate the user, this token (which can be *anything* that **uniquely** identifies the user, but a common standard is to use a [JSON Web Token](https://jwt.io) (JWT)) *must be included* with every request the client makes. That way the token can be **invalidated** (in the case that it's lost or stolen) and the user doesn't have to change their password. They simply *re-authenticate* to get a fresh token.
 - The easiest way to manage displaying the right content to the user based on
 whether they've logged in, is to *split your app into two parts*: **Authenticated**,
 and **Unauthenticated**. Then you choose which to render based on whether you have
@@ -22,7 +23,7 @@ const token = await authProvider.getToken()
 const headers = {
   Authorization: token ? `Bearer ${token}` : undefined,
 }
-window.fetch('http://example.com/pets', {headers})
+window.fetch('http://example.com/api', {headers})
 ```
 - How to merge params without overriding the existing ones ([at 1:30](https://epicreact.dev/modules/build-an-epic-react-app/authentication-extra-credit-solution-01)).
 - It's a good practice to separate `async` logics into an [independent function](https://github.com/HelpMe-Pls/bookshelf-forked/blob/exercises/04-authentication/src/app.extra-1.js) rather than putting it inside the `useEffect`.
