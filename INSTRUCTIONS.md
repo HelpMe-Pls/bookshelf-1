@@ -1,8 +1,31 @@
 # Authentication
 
-## 📝 Your Notes
+## 📝 What I've learnt
+- The user doesn't want to submit their password every time they need to
+make a request for data. They want to be able to log into the application and
+then the application can continuously authenticate requests for them automatically. A common solution to this problem is to have a special limited use "**token**" which represents the user's *current session*. So, in order to authenticate the user, this token (which can be *anything* that **uniquely** identifies the user, but a common standard is to use a [JSON Web Token](https://jwt.io) (JWT)) *must be included* with every request the client makes. That way the token can be **invalidated** (in the case that it's lost or stolen) and the user doesn't have to change their password. They simply *re-authenticate* to get a fresh token.
+- The easiest way to manage displaying the right content to the user based on
+whether they've logged in, is to *split your app into two parts*: **Authenticated**,
+and **Unauthenticated**. Then you choose which to render based on whether you have
+the user's information.
+- When the app loads in the first place, you'll call your auth provider's API
+to retrieve a token if the user is already logged in. If they are, then you can
+show a loading screen while you request the user's data before rendering
+anything else. If they aren't, then you know you can render the login screen
+right away. 
+- A common way to attach the token is to use a third-party authentication services (or something similar provided by your back-end):
+```ts
+//Call some API to retrieve a token
+const token = await authProvider.getToken()
 
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+// If there's a token, then send it along with the requests you make
+const headers = {
+  Authorization: token ? `Bearer ${token}` : undefined,
+}
+window.fetch('http://example.com/pets', {headers})
+```
+
+
 
 ## Background
 
