@@ -23,15 +23,23 @@ async function getUser() {
 }
 
 function App() {
-  const {data, error, isIdle, isLoading, isSuccess, isError, run, setData} =
-    useAsync()
+  const {
+    data: user,
+    error,
+    isLoading,
+    isIdle,
+    isError,
+    isSuccess,
+    run,
+    setData,
+  } = useAsync()
 
   React.useEffect(() => {
-    run(getUser()).then(u => setData(u))
-  }, [run, setData])
+    run(getUser())
+  }, [run])
 
-  const login = form => auth.login(form).then(u => setData(u))
-  const register = form => auth.register(form).then(u => setData(u))
+  const login = form => auth.login(form).then(user => setData(user))
+  const register = form => auth.register(form).then(user => setData(user))
   const logout = () => {
     auth.logout()
     setData(null)
@@ -60,8 +68,8 @@ function App() {
   }
 
   if (isSuccess) {
-    return data ? (
-      <AuthenticatedApp user={data} logout={logout} />
+    return user ? (
+      <AuthenticatedApp user={user} logout={logout} />
     ) : (
       <UnauthenticatedApp login={login} register={register} />
     )
