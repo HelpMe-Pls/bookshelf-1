@@ -26,7 +26,7 @@ const headers = {
 window.fetch('http://example.com/api', {headers})
 ```
 - How to merge params without overriding the existing ones ([at 1:30](https://epicreact.dev/modules/build-an-epic-react-app/authentication-extra-credit-solution-01)).
-- It's a good practice to separate `async` logics into an [independent function](https://github.com/HelpMe-Pls/bookshelf-forked/blob/exercises/04-authentication/src/app.extra-1.js) rather than putting it inside the `useEffect`.
+- It's a good practice to extract `async` logics into an [independent function](https://github.com/HelpMe-Pls/bookshelf-forked/blob/exercises/04-authentication/src/app.extra-1.js) then call it in inside the `useEffect` rather than defining it from withtin.
 
 
 ## Background
