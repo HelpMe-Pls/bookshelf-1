@@ -13,9 +13,9 @@ to retrieve a token if the user is already logged in. If they are, then you can
 show a loading screen while you request the user's data before rendering
 anything else. If they aren't, then you know you can render the login screen
 right away. 
-- A common way to attach the token is to use a third-party authentication services (or something similar provided by your back-end):
+- A common way to get the token is to use a third-party authentication services (or something similar provided by your back-end):
 ```ts
-//Call some API to retrieve a token
+// Call some API to retrieve a token
 const token = await authProvider.getToken()
 
 // If there's a token, then send it along with the requests you make
