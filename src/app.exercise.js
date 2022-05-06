@@ -17,7 +17,7 @@ function App() {
     setUser(null)
   }
   React.useEffect(() => {
-    ;(async function getUser() {
+    ;(async () => {
       const token = await auth.getToken()
       if (token) {
         // we're logged in! Let's go get the user's data:
