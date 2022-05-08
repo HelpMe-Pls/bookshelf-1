@@ -1,7 +1,7 @@
 # Routing
 
 ## 📝 What I've learnt
-- Embracing Single-page App: you can change the URL when the user performs an action (like clicking a link or submitting a form). This all happens client-side and does **not** reload the browser by using [`react-router`](https://epicreact.dev/modules/build-an-epic-react-app/routing-solution).
+- Embracing Single-page App: you can change the URL when the user performs an action (like clicking a link or submitting a form). This all happens client-side and does **not** reload the browser by using `react-router`. Key takeaways: differences between `BrowserRouter`, `Routes`, `Route` and `Link` ([at 6:50](https://epicreact.dev/modules/build-an-epic-react-app/routing-solution)). 
 
 
 
