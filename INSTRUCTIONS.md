@@ -13,9 +13,15 @@
 > channel. Finish this exercise first, and then you can watch the live stream
 > here: https://www.youtube.com/watch?v=umJqHUcOaUo
 
-## 📝 Your Notes
+## 📝 What I've learnt
+- An app's state can be separated into two types:
+1. UI state: Modal is open, item is highlighted, etc.
+2. Server cache: User data, tweets, contacts, etc.
+We can drastically simplify our UI state management if we split out the server
+cache into something separate.
+- Use nullish coalescing operator `??` with run-time array [traversing methods](status-button).
+- 
 
-Elaborate on your learnings here in `INSTRUCTIONS.md`
 
 ## Background
 
