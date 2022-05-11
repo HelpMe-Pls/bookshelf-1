@@ -21,7 +21,7 @@ function ListItemList({
   const {data: listItems} = useQuery({
     queryKey: 'list-items',
     queryFn: () =>
-      client(`list-item`, {token: user.token}).then(data => data.listItems),
+      client(`list-items`, {token: user.token}).then(data => data.listItems),
   })
 
   // 🐨 assign this to the list items you get back from react-query
