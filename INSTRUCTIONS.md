@@ -25,6 +25,7 @@ cache into something separate.
 - If your `queryFn` depends on a variable, include it in your `queryKey` array. How to [optimize](https://tkdodo.eu/blog/effective-react-query-keys) query keys. 
 - Invalidate query with `onSettled` option from the `useMutation` hook ([at 2:35](https://epicreact.dev/modules/build-an-epic-react-app/cache-management-solution-02)).
 - Clear the cache (e.g. when the user logs out or they make a `401` request) by using `queryCache.clear()`.
+- Refactor hooks from `react-query` into custom hooks to abstract implementation details and avoid the risk of syntax errors from duplicating the same piece of code over and over again ([at 2:30](https://epicreact.dev/modules/build-an-epic-react-app/cache-management-extra-credit-solution-01-03)).
 
 
 ## Background
