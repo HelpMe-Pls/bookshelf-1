@@ -19,7 +19,7 @@ const defaultMutationOptions = {
   onSettled: () => queryCache.invalidateQueries('list-items'),
 }
 
-function useUpdateListItem(user) {
+function useUpdateListItem(user, options) {
   return useMutation(
     updates =>
       client(`list-items/${updates.id}`, {
@@ -27,7 +27,7 @@ function useUpdateListItem(user) {
         data: updates,
         token: user.token,
       }),
-    defaultMutationOptions,
+    {...defaultMutationOptions, ...options},
   )
 }
 
