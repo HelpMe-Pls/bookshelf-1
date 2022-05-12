@@ -11,12 +11,12 @@ const loadingBook = {
   loadingBook: true,
 }
 
-const loadingBooks = Array.from({length: 10}, (_v, index) => ({
+const loadingBooks = Array.from({length: 10}, (v, index) => ({
   id: `loading-book-${index}`,
   ...loadingBook,
 }))
 
-export function useBookSearch(query, user) {
+function useBookSearch(query, user) {
   const result = useQuery({
     queryKey: ['bookSearch', {query}],
     queryFn: () =>
@@ -27,11 +27,13 @@ export function useBookSearch(query, user) {
   return {...result, books: result.data ?? loadingBooks}
 }
 
-export function useBook(bookId, user) {
+function useBook(bookId, user) {
   const {data} = useQuery({
     queryKey: ['book', {bookId}],
     queryFn: () =>
-      client(`books/${bookId}`, {token: user.token}).then(res => res.book),
+      client(`books/${bookId}`, {token: user.token}).then(data => data.book),
   })
   return data ?? loadingBook
 }
+
+export {useBook, useBookSearch}

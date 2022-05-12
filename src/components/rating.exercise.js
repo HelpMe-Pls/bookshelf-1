@@ -2,8 +2,7 @@
 import {jsx} from '@emotion/core'
 
 import * as React from 'react'
-
-import {useUpdateListItem} from '../utils/list-items.exercise'
+import {useUpdateListItem} from 'utils/list-items'
 import {FaStar} from 'react-icons/fa'
 import * as colors from 'styles/colors'
 
