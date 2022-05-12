@@ -31,17 +31,17 @@ function useUpdateListItem(user, options) {
   )
 }
 
-function useRemoveListItem(user) {
+function useRemoveListItem(user, options) {
   return useMutation(
     ({id}) => client(`list-items/${id}`, {method: 'DELETE', token: user.token}),
-    defaultMutationOptions,
+    {...defaultMutationOptions, ...options},
   )
 }
 
-function useCreateListItem(user) {
+function useCreateListItem(user, options) {
   return useMutation(
     ({bookId}) => client(`list-items`, {data: {bookId}, token: user.token}),
-    defaultMutationOptions,
+    {...defaultMutationOptions, ...options},
   )
 }
 

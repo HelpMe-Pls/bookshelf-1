@@ -83,14 +83,6 @@ function Rating({listItem, user}) {
             {ratingValue} {ratingValue === 1 ? 'star' : 'stars'}
           </span>
           <FaStar css={{width: '16px', margin: '0 2px'}} />
-          {isError ? (
-            <ErrorMessage
-              error={error}
-              variant="inline"
-              css={{marginLeft: 6, fontSize: '0.7em'}}
-            />
-          ) : null}
-          s
         </label>
       </React.Fragment>
     )
@@ -108,6 +100,13 @@ function Rating({listItem, user}) {
       }}
     >
       <span css={{display: 'flex'}}>{stars}</span>
+      {isError ? (
+        <ErrorMessage
+          error={error}
+          variant="inline"
+          css={{marginLeft: 6, fontSize: '0.7em'}}
+        />
+      ) : null}
     </div>
   )
 }
