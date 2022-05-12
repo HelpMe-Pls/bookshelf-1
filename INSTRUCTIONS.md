@@ -27,7 +27,7 @@ cache into something separate.
 - Clear the cache (e.g. when the user logs out or they make a `401` request) by using `queryCache.clear()`.
 - Refactor hooks from `react-query` into custom hooks to abstract implementation details and avoid the risk of syntax errors from duplicating the same piece of code over and over again ([at 2:30](https://epicreact.dev/modules/build-an-epic-react-app/cache-management-extra-credit-solution-01-03)).
 - Set the `useErrorBoundary` option from the `useMutation` hook to `true` to get mutation errors [to be thrown in the render phase](https://youtu.be/umJqHUcOaUo?t=1178) and propagate to the nearest error boundary. 
-- 
+- Prefetch with [`queryClient.prefetchQuery`](https://react-query.tanstack.com/reference/QueryClient#queryclientprefetchquery) and [`queryClient.removeQueries`](https://react-query.tanstack.com/reference/QueryClient#queryclientremovequeries).
 
 
 ## Background
