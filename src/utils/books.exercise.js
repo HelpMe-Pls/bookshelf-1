@@ -31,9 +31,6 @@ const getBookSearchConfig = (query, user) => ({
   },
 })
 
-export const setQueryDataForBook = book =>
-  queryCache.setQueryData(['book', {bookId: book.id}], book)
-
 function useBookSearch(query, user) {
   const result = useQuery(getBookSearchConfig(query, user))
   return {...result, books: result.data ?? loadingBooks}
@@ -53,4 +50,8 @@ async function refetchBookSearchQuery(user) {
   await queryCache.prefetchQuery(getBookSearchConfig('', user))
 }
 
-export {useBook, useBookSearch, refetchBookSearchQuery}
+function setQueryDataForBook(book) {
+  queryCache.setQueryData(['book', {bookId: book.id}], book)
+}
+
+export {useBook, useBookSearch, refetchBookSearchQuery, setQueryDataForBook}
