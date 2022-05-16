@@ -1,11 +1,83 @@
-// 🐨 create and export a React context variable for the AuthContext
-// 💰 using React.createContext
-import {createContext, useContext} from 'react'
-export const AuthContext = createContext()
-export const useAuth = () => {
-  const context = useContext(AuthContext)
+import * as React from 'react'
+
+import {queryCache} from 'react-query'
+import * as auth from 'auth-provider'
+import {FullPageSpinner} from '../components/lib'
+import * as colors from '../styles/colors'
+import {client} from '../utils/api-client'
+import {useAsync} from '../utils/hooks'
+
+const AuthContext = React.createContext()
+AuthContext.displayName = 'AuthContext'
+
+export function useAuth() {
+  const context = React.useContext(AuthContext)
   if (context === undefined) {
-    throw new Error(`useAuth must be used within a AuthContext provider`)
+    throw new Error(`useAuth must be used within a AuthProvider`)
   }
   return context
+}
+
+export function AuthProvider({children}) {
+  const {
+    data: user,
+    error,
+    isLoading,
+    isIdle,
+    isError,
+    isSuccess,
+    run,
+    setData,
+  } = useAsync()
+
+  React.useEffect(() => {
+    run(getUser())
+  }, [run])
+
+  const login = form => auth.login(form).then(u => setData(u))
+  const register = form => auth.register(form).then(u => setData(u))
+  const logout = () => {
+    auth.logout()
+    queryCache.clear()
+    setData(null)
+  }
+  const props = {user, login, register, logout}
+
+  if (isLoading || isIdle) {
+    return <FullPageSpinner />
+  }
+
+  if (isError) {
+    return (
+      <div
+        css={{
+          color: colors.danger,
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <p>Uh oh... There's a problem. Try refreshing the app.</p>
+        <pre>{error.message}</pre>
+      </div>
+    )
+  }
+
+  if (isSuccess) {
+    return <AuthContext.Provider value={props}>{children}</AuthContext.Provider>
+  }
+}
+
+async function getUser() {
+  let user = null
+
+  const token = await auth.getToken()
+  if (token) {
+    const data = await client('me', {token})
+    user = data.user
+  }
+
+  return user
 }

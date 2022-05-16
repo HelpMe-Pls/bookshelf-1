@@ -2,11 +2,10 @@
 import {jsx} from '@emotion/core'
 
 import * as React from 'react'
+import {useAuth} from './context/auth-context'
 import {Input, Button, Spinner, FormGroup, ErrorMessage} from './components/lib'
 import {Modal, ModalContents, ModalOpenButton} from './components/modal'
 import {Logo} from './components/logo'
-
-import {useAuth} from './context/auth-context'
 import {useAsync} from './utils/hooks'
 
 function LoginForm({onSubmit, submitButton}) {
@@ -60,10 +59,7 @@ function LoginForm({onSubmit, submitButton}) {
   )
 }
 
-// you'll no longer receive the login and register functions as props
-// 💣 remove the props
 function UnauthenticatedApp() {
-  // 🐨 get login and register from the useAuth hook
   const {login, register} = useAuth()
   return (
     <div

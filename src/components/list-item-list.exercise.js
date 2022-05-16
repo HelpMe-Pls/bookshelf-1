@@ -5,13 +5,7 @@ import {useListItems} from 'utils/list-items'
 import {BookListUL} from './lib'
 import {BookRow} from './book-row'
 
-function ListItemList({
-  // 🐨 no longer need to accept the user as a prop
-  filterListItems,
-  noListItems,
-  noFilteredListItems,
-}) {
-  // 🐨 remove the user from this call
+function ListItemList({filterListItems, noListItems, noFilteredListItems}) {
   const listItems = useListItems()
 
   const filteredListItems = listItems.filter(filterListItems)
@@ -31,10 +25,7 @@ function ListItemList({
     <BookListUL>
       {filteredListItems.map(listItem => (
         <li key={listItem.id}>
-          <BookRow
-            // 💣 remove the user prop here
-            book={listItem.book}
-          />
+          <BookRow book={listItem.book} />
         </li>
       ))}
     </BookListUL>
