@@ -5,6 +5,7 @@
 - [When](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04) to convert a function into a hook (also a notice on how hooks are used). A tip for when you have a function which needs to access the context's value ([at 02:18](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04)).
 - The most practical use case of `useCallback` ([at 1:20](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04)).
 - Improve maintainability by SoC: create a component as a wrapper, whose sole purpose is to manage and provide the context. A standard `context` file should [look like this](auth-context). 
+- It is recommmended to move all the contexts into a global context module (`index` file in the `context` folder) for easier testing.
 
 ## Background
 
