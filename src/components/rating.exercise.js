@@ -18,10 +18,10 @@ const visuallyHiddenCSS = {
   width: '1px',
 }
 // 💣 remove the user prop
-function Rating({listItem, user}) {
+function Rating({listItem}) {
   const [isTabbing, setIsTabbing] = React.useState(false)
   // 💣 we no longer need to pass the user here:
-  const [update, {error, isError}] = useUpdateListItem(user)
+  const [update, {error, isError}] = useUpdateListItem()
 
   React.useEffect(() => {
     function handleKeyDown(event) {
@@ -35,7 +35,7 @@ function Rating({listItem, user}) {
 
   const rootClassName = `list-item-${listItem.id}`
 
-  const stars = Array.from({length: 5}).map((x, i) => {
+  const stars = Array.from({length: 5}).map((_x, i) => {
     const ratingId = `rating-${listItem.id}-${i}`
     const ratingValue = i + 1
     return (

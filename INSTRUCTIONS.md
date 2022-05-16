@@ -1,8 +1,9 @@
 # Context
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- The common cases for context (to eliminate prop-drilling) are application "toast" notifications, user authentication state, or modal and focus management. 
+- [When](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04) to convert a function into a hook (also a notice on how hooks are used). A tip for when you have a function which needs to access the context's value ([at 02:18](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04)).
+- The most practical use case of `useCallback` ([at 1:20](https://epicreact.dev/modules/build-an-epic-react-app/context-solution-04)).
 
 ## Background
 
