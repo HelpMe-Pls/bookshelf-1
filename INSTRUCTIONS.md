@@ -11,7 +11,7 @@ const AuthenticatedApp = React.lazy(() =>
 )
 ```
 - The only time the context's provider re-renders is when the [state actually changes](https://kentcdodds.com/blog/optimize-react-re-renders) (which is when you _want_ consumers to re-render anyway). However, it's often a good idea to [memoize the functions](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-02) we expose through context so those functions can be passed into dependency arrays. And we'll memoize the context value as well.
-- 
+- Measure and report your app's performance [with `React.Profiler`](https://reactjs.org/docs/profiler.html). How to customize the `Profiler` ([at 2:00](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-03-01)) and how to use it ([at 1:10](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-03-02)). A remind ([at 2:35](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-03-03)) on where to put your `Profiler`. Add the `Profiler` to your production build ([at 1:10](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-03-04)).
 
 
 ## Background
