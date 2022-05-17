@@ -4,6 +4,7 @@
 - Not all reusable components are _actually_ reusable. Lots of the time what it turns into is a mess of props. Those end upbeing enormously difficult to use and maintain. They're also riddled with performance problems and actual bugs.
 - A recommended approach is to refactor your code by [creating compound components](https://epicreact.dev/modules/build-an-epic-react-app/compound-components-solution) which are structurally flexible (i.e. we don't want to control the structure of the components), but we still want to have implicitly shared state between them. Utilizing `context` ([at 07:45](https://epicreact.dev/modules/build-an-epic-react-app/compound-components-solution)) will help us with that. 
 - Create a generic utility function ([at 01:50](https://epicreact.dev/modules/build-an-epic-react-app/compound-components-extra-credit-solution-01)) which calls many functions at once.
+- Create a HOC (to embrace immutability) from a base component ([at 01:45](https://epicreact.dev/modules/build-an-epic-react-app/compound-components-extra-credit-solution-02)) to further customize an existing component.
 
 ## Background
 
