@@ -1,8 +1,9 @@
 # Performance
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- **Code splitting**: no matter how big your application grows, it's unlikely the user needs _everything_ your application can do on the page at the same time. So if instead we split the application code and assets into logical "chunks" (using `React.lazy`) then we could load only the chunks necessary for what the user wants to do right then. 
+- Remember, `React.lazy` expects the module you're importing to export a React component as the **default export**.
+- Use the Devtool's `coverage` to measure if your optimization is worth it ([at 4:50](https://epicreact.dev/modules/build-an-epic-react-app/performance-solution)).
 
 ## Background
 

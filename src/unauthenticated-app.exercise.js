@@ -59,7 +59,7 @@ function LoginForm({onSubmit, submitButton}) {
   )
 }
 
-function UnauthenticatedApp() {
+export default function UnauthenticatedApp() {
   const {login, register} = useAuth()
   return (
     <div
@@ -109,7 +109,7 @@ function UnauthenticatedApp() {
 }
 
 // 🐨 change this to a default export
-export {UnauthenticatedApp}
+// export {UnauthenticatedApp}
 
 // 🐨 Unfortunately, to make this work for our workshop,
 // you need to add this to src/unauthenticated-app.js:

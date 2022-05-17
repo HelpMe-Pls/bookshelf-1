@@ -28,7 +28,7 @@ function ErrorFallback({error}) {
   )
 }
 
-function AuthenticatedApp() {
+export default function AuthenticatedApp() {
   const {user, logout} = useAuth()
   return (
     <ErrorBoundary FallbackComponent={FullPageErrorFallback}>
@@ -110,7 +110,7 @@ function NavLink(props) {
   )
 }
 
-function Nav(params) {
+function Nav() {
   return (
     <nav
       css={{
@@ -158,7 +158,7 @@ function AppRoutes() {
 }
 
 // 🐨 change this to a default export
-export {AuthenticatedApp}
+// export {AuthenticatedApp}
 
 // 🐨 Unfortunately, to make this work for our workshop,
 // you need to add this to src/authenticated-app.js:
