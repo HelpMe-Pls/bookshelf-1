@@ -6,8 +6,8 @@ earlier we can start requesting those assets, the faster we can show the user th
 - **Render while you fetch**: start your requests for the needed code, data, or assets **as soon as** you have the information you need to retrieve them:
 1. Take a look at everything you're *loading*
 2. Determine the minimal amount of things you need to start rendering something useful to the user.
-3. Start loading those things as soon as you possibly can.
-- 
+3. Start loading those things [as soon as](https://epicreact.dev/modules/build-an-epic-react-app/render-as-you-fetch-extra-credit-solution-01) you possibly can.
+
 
 ## Background
 
