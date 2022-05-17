@@ -1,8 +1,13 @@
 # Render as you fetch
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- There are some assets we need to load before the app can render the initial page. The
+earlier we can start requesting those assets, the faster we can show the user their data.
+- **Render while you fetch**: start your requests for the needed code, data, or assets **as soon as** you have the information you need to retrieve them:
+1. Take a look at everything you're *loading*
+2. Determine the minimal amount of things you need to start rendering something useful to the user.
+3. Start loading those things as soon as you possibly can.
+- 
 
 ## Background
 
@@ -25,8 +30,7 @@ or assets as soon as you have the information you need to retrieve them. You go
 about this by applying this process:
 
 1. Take a look at everything you're loading
-2. Determine the minimal amount of things you need to start rendering something
-   useful to the user
+2. Determine the minimal amount of things you need to start rendering something useful to the user
 3. Start loading those things as soon as you possibly can
 
 ## Exercise
