@@ -10,6 +10,7 @@ const AuthenticatedApp = React.lazy(() =>
   import(/* webpackPrefetch: true */ './authenticated-app'),
 )
 ```
+- The only time the context's provider re-renders is when the [state actually changes](https://kentcdodds.com/blog/optimize-react-re-renders) (which is when you _want_ consumers to re-render anyway). However, it's often a good idea to [memoize the functions](https://epicreact.dev/modules/build-an-epic-react-app/performance-extra-credit-solution-02) we expose through context so those functions can be passed into dependency arrays. And we'll memoize the context value as well.
 - 
 
 
