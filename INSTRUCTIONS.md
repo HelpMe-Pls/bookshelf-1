@@ -1,9 +1,7 @@
 # Testing Hooks and Components
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
-
+## 📝 What I've learnt
+-
 ## Background
 
 The two building blocks of React applications are Hooks and Components. You can
