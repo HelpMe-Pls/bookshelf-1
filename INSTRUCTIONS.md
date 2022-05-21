@@ -295,8 +295,7 @@ Typically, you're going to want to use utilities like the ones we made in the
 last extra credit in lots more tests throughout the app. Not only the utilities,
 but also things like cleaning up the `queryCache`.
 
-For the setup with our test hooks (our `afterEach`), we can put those kinds of
-things general things in the `src/setupTests.js` file and those will get run
+For the setup with our test hooks (our `afterEach`), we can put those kinds of general things in the `src/setupTests.js` file and those will get run
 automatically for each test. So in this extra credit move things from our test
 file to that file.
 
