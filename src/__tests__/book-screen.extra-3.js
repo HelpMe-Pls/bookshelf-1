@@ -55,7 +55,7 @@ const waitForLoadingToFinish = () =>
     ...screen.queryAllByText(/loading/i),
   ])
 
-test('renders all the book information', async () => {
+test.skip('renders all the book information', async () => {
   const book = await booksDB.create(buildBook())
   const route = `/book/${book.id}`
 
@@ -87,7 +87,7 @@ test('renders all the book information', async () => {
   expect(screen.queryByLabelText(/start date/i)).not.toBeInTheDocument()
 })
 
-test('can create a list item for the book', async () => {
+test.skip('can create a list item for the book', async () => {
   const book = await booksDB.create(buildBook())
   const route = `/book/${book.id}`
 

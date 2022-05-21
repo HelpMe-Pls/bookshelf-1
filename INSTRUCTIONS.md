@@ -7,7 +7,7 @@
 - Reverse engineering to mock the logged in state ([at 1:35](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-03)).
 - Use `window.history.pushState` ([at 4:00](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-04)) to update the testing route's URL.
 - `getByText` vs `getByRole` ([at 1:10](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-05)) and `getByRole` vs `queryByRole` ([at 3:50](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-05)).
-- 
+- For a myriad of reasons, you may find it preferable to not hit the _actual_ backend during development. In such cases, [use `msw`](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-01) to create request handlers (regular HTTP calls as well as GraphQL queries) and return mock responses. It does this using a ServiceWorker, so you'll see the fetch requests in the network tab, but as long as you have a mock handler, a *real* fetch call will *not be made* and instead your request handler can handle the request for you.
 ## Background
 
 Let's take a step back and pretend that testing doesn't exist. Imagine you're
@@ -181,7 +181,7 @@ good to go) and you've got yourself a great development experience.
 > `src/test/server`
 
 So, bringing this back to testing, because we've essentially re-implemented the
-basics of our backend with msw handlers, we can use those _exact same_ handlers
+basics of our backend with `msw` handlers, we can use those _exact same_ handlers
 for our tests as well using `msw`'s `setupServer` function:
 
 ```javascript

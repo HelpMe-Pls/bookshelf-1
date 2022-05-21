@@ -39,7 +39,7 @@ async function renderBookScreen({user, book, listItem} = {}) {
   }
 }
 
-test('renders all the book information', async () => {
+test.skip('renders all the book information', async () => {
   const {book} = await renderBookScreen({listItem: null})
 
   expect(screen.getByRole('heading', {name: book.title})).toBeInTheDocument()
@@ -68,7 +68,7 @@ test('renders all the book information', async () => {
   expect(screen.queryByLabelText(/start date/i)).not.toBeInTheDocument()
 })
 
-test('can create a list item for the book', async () => {
+test.skip('can create a list item for the book', async () => {
   await renderBookScreen({listItem: null})
 
   const addToListButton = screen.getByRole('button', {name: /add to list/i})
@@ -97,7 +97,7 @@ test('can create a list item for the book', async () => {
   expect(screen.queryByRole('radio', {name: /star/i})).not.toBeInTheDocument()
 })
 
-test('can remove a list item for the book', async () => {
+test.skip('can remove a list item for the book', async () => {
   await renderBookScreen()
 
   const removeFromListButton = screen.getByRole('button', {
@@ -115,7 +115,7 @@ test('can remove a list item for the book', async () => {
   ).not.toBeInTheDocument()
 })
 
-test('can mark a list item as read', async () => {
+test.skip('can mark a list item as read', async () => {
   const {listItem} = await renderBookScreen()
 
   // set the listItem to be unread in the DB
@@ -142,7 +142,7 @@ test('can mark a list item as read', async () => {
   ).not.toBeInTheDocument()
 })
 
-test('can edit a note', async () => {
+test.skip('can edit a note', async () => {
   // using fake timers to skip debounce time
   jest.useFakeTimers()
   const {listItem} = await renderBookScreen()

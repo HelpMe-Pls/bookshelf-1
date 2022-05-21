@@ -22,7 +22,7 @@ afterEach(async () => {
   ])
 })
 
-test('renders all the book information', async () => {
+test.skip('renders all the book information', async () => {
   const user = buildUser()
   await usersDB.create(user)
   const authUser = await usersDB.authenticate(user)
@@ -65,7 +65,7 @@ test('renders all the book information', async () => {
   expect(screen.queryByLabelText(/start date/i)).not.toBeInTheDocument()
 })
 
-test('can create a list item for the book', async () => {
+test.skip('can create a list item for the book', async () => {
   const user = buildUser()
   await usersDB.create(user)
   const authUser = await usersDB.authenticate(user)

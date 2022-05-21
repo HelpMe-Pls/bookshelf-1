@@ -17,7 +17,7 @@ const fakeTimerUserEvent = userEvent.setup({
   advanceTimers: () => jest.runOnlyPendingTimers(),
 })
 
-test('renders all the book information', async () => {
+test.skip('renders all the book information', async () => {
   const book = await booksDB.create(buildBook())
   const route = `/book/${book.id}`
 
@@ -49,7 +49,7 @@ test('renders all the book information', async () => {
   expect(screen.queryByLabelText(/start date/i)).not.toBeInTheDocument()
 })
 
-test('can create a list item for the book', async () => {
+test.skip('can create a list item for the book', async () => {
   const book = await booksDB.create(buildBook())
   const route = `/book/${book.id}`
 
@@ -81,7 +81,7 @@ test('can create a list item for the book', async () => {
   expect(screen.queryByRole('radio', {name: /star/i})).not.toBeInTheDocument()
 })
 
-test('can remove a list item for the book', async () => {
+test.skip('can remove a list item for the book', async () => {
   const user = await loginAsUser()
 
   const book = await booksDB.create(buildBook())
@@ -105,7 +105,7 @@ test('can remove a list item for the book', async () => {
   ).not.toBeInTheDocument()
 })
 
-test('can mark a list item as read', async () => {
+test.skip('can mark a list item as read', async () => {
   const user = await loginAsUser()
   const book = await booksDB.create(buildBook())
   const listItem = await listItemsDB.create(
@@ -140,7 +140,7 @@ test('can mark a list item as read', async () => {
   ).not.toBeInTheDocument()
 })
 
-test('can edit a note', async () => {
+test.skip('can edit a note', async () => {
   // using fake timers to skip debounce time
   jest.useFakeTimers()
   const user = await loginAsUser()
