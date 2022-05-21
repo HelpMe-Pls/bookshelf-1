@@ -1,9 +1,13 @@
 # Integration Testing
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
-
+## 📝 What I've learnt
+- We should get most of our use case coverage from the Integration type tests. This is because they give us the most bang for our buck in regards to the level of confidence we can achieve relative to the amount of work they take. Write tests. Not too many. [Mostly integration](https://kentcdodds.com/blog/write-tests).
+- With integration test, you're typically only going to need to mock out HTTP requests and _sometimes_ third party modules as well. You'll find that you get a lot of confidence from getting the bulk of your coverage from integration tests and reserving unit tests for pure functions of complex logic and highly reusable code/components.
+- Use the `wrapper` option of the `render()` from testing-library/react ([at 1:15](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-01)) to test a component that uses `context`.
+- Reverse engineering to mock the logged in state ([at 1:35](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-03)).
+- Use `window.history.pushState` ([at 4:00](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-04)) to update the testing route's URL.
+- `getByText` vs `getByRole` ([at 1:10](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-05)) and `getByRole` vs `queryByRole` ([at 3:50](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-solution-05)).
+- 
 ## Background
 
 Let's take a step back and pretend that testing doesn't exist. Imagine you're
