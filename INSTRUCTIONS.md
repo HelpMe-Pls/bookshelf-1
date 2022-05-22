@@ -11,6 +11,8 @@
 - How to test `Date` fields ([at 3:50](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-02)).
 - [Clean up](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-03-02) your tests by separate repeated logics [into modules](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-04). Sometimes when you're testing a screen, you'll notice you're doing some repeated things that are *specific to that screen* and not generally applicable to other screens. When that happens, it could make sense to create abstractions for [that](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-06) screen.
 - Test [debounced input](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-05-04).
+- When to use the `describe` block in your test ([at 1:00](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-07-02)).
+- Test the *expected error response* from the server ([at 3:20](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-07-03)).
 
 ## Background
 
