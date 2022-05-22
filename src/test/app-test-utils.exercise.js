@@ -9,10 +9,7 @@ import * as auth from 'auth-provider'
 import {buildUser} from './generate'
 import * as usersDB from './data/users'
 
-export async function render(
-  ui,
-  {route = '/list', user, ...renderOptions} = {},
-) {
+async function render(ui, {route = '/list', user, ...renderOptions} = {}) {
   // if you want to render the app unauthenticated then pass "null" as the user
   user = typeof user === 'undefined' ? await loginAsUser() : user
   window.history.pushState({}, 'Test page', route)
@@ -27,7 +24,7 @@ export async function render(
   return returnValue
 }
 
-export async function loginAsUser(userProperties) {
+async function loginAsUser(userProperties) {
   const user = buildUser(userProperties)
   await usersDB.create(user)
   const authUser = await usersDB.authenticate(user)
@@ -35,11 +32,11 @@ export async function loginAsUser(userProperties) {
   return authUser
 }
 
-export const waitForLoadingToFinish = () =>
+const waitForLoadingToFinish = () =>
   waitForElementToBeRemoved(() => [
     ...screen.queryAllByLabelText(/loading/i),
     ...screen.queryAllByText(/loading/i),
   ])
 
 export * from '@testing-library/react'
-export {userEvent}
+export {render, userEvent, loginAsUser, waitForLoadingToFinish}

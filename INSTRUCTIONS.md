@@ -10,6 +10,7 @@
 - For a myriad of reasons, you may find it preferable to not hit the _actual_ backend during development. In such cases, [use `msw`](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-01) to create request handlers (regular HTTP calls as well as GraphQL queries) and return mock responses. It does this using a ServiceWorker, so you'll see the fetch requests in the network tab, but as long as you have a mock handler, a *real* fetch call will *not be made* and instead your request handler can handle the request for you.
 - How to test `Date` fields ([at 3:50](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-02)).
 - [Refactor](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-03-02) your test.
+- Test [debounced input](https://epicreact.dev/modules/build-an-epic-react-app/integration-testing-extra-credit-solution-05-04).
 ## Background
 
 Let's take a step back and pretend that testing doesn't exist. Imagine you're
@@ -349,7 +350,7 @@ feature. See if you can figure out how to use `jest.useFakeTimers()` and
 `jest.useRealTimers()` to speed that up (it takes fewer changes than you think).
 
 💰 Long after recording the videos, I discovered a critical issue that lead to
-some flaky tests when using fake timers and react-query together. After much
+some flaky tests when using fake timers and `react-query` together. After much
 agonizing pain, I finally figured out the solution to the problem and I've
 updated the codebase to handle this. I suggest for this extra credit you take a
 look at the `src/setupTests.extra-5.js` file and just copy/paste the `afterEach`
