@@ -1,8 +1,21 @@
 # E2E Testing
 
-## 📝 Your Notes
-
-Elaborate on your learnings here in `INSTRUCTIONS.md`
+## 📝 What I've learnt
+- There's no better way to make automated tests resemble the way the user will use
+your software than to program an _actual browser_ to interact with your
+application the same way a user would (without access to any internals, without
+mocking the backend,...). This is called an "End-to-End" test (or E2E).
+- For unit tests, we're often testing a single function. For integration tests,
+we're normally testing a single screen. For E2E tests, we're putting it all
+together and testing the application *as a whole*. This means that typically the
+E2E test **follows a typical user flow** which results in a longer, more
+comprehensive test that allows you to cover a lot of the most important use
+cases for your application.
+- A well-known automated E2E testing tool is [Cypress](https://www.cypress.io/) (another worthy alternative is [Playwright](https://playwright.dev/) if you want something new). [How to](https://epicreact.dev/modules/build-an-epic-react-app/e2e-testing-solution-01) configure Cypress. 
+- Notice when testing password inputs ([at 1:45](https://epicreact.dev/modules/build-an-epic-react-app/e2e-testing-solution-01)).
+- The difference between `cy.findByRole()` and `cy.findAllByRole()` ([at 2:05](https://epicreact.dev/modules/build-an-epic-react-app/e2e-testing-solution-02)).
+- Force a "click" event ([at 1:30](https://epicreact.dev/modules/build-an-epic-react-app/e2e-testing-solution-03)). 
+- Avoid [Common Testing Mistakes](https://kentcdodds.com/blog/common-testing-mistakes#mistake-number-3-repeat-testing).
 
 ## Background
 
@@ -110,7 +123,7 @@ For this exercise, we're going to test the following user flow:
 - Give the book a 5 star rating
 - Go to the finished books screen
 - Verify the book shows up and has a 5 star rating
-- Click the book to go back to it's page
+- Click on the book to go back to its page
 - Remove it from the reading list
 - Make sure the notes and rating are gone
 - Go to the finished books screen and make sure that list is empty
