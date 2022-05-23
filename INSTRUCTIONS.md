@@ -6,9 +6,9 @@
 - [When](https://kentcdodds.com/blog/aha-testing) to refactor/abstract your tests.
 - Various types of tests:
 1. **Static**: catch typos and type errors as you write the code.
-2. **Unit**: verify that individual, isolated parts works as expected.
-3. **Integration**: verify that several units works together in harmony.
-4. **End to End** (AKA "e2e test" or "functional testing"): a helper that behaves like an user to click around the app and verify that things function the way you want. 
+2. **Unit**: verify that individual, isolated parts works as expected (we're often testing a single function).
+3. **Integration**: verify that several units works together in harmony (we're normally testing a single screen).
+4. **End to End** (AKA "e2e test" or "functional testing"): a helper that behaves like an user to click around the app and verify that things function the way you want (we're putting it all together and testing the application as a whole). 
 - Typically, you'll get confidence that your components are working when you run
 them as part of integration tests with other components. However, highly
 reusable or complex components/hooks can really benefit from a solid suite of
