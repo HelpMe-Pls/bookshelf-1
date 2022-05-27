@@ -1,6 +1,7 @@
 # Unit Testing
 
 ## 📝 What I've learnt
+- When writing code, remember that you already have two users that you need to support: End users, and developer users
 - Any piece of code that's heavily relied upon is a good candidate for unit testing. Keep in mind that [not everything](https://kentcdodds.com/blog/how-to-know-what-to-test) needs a unit test. Think less about the code you are testing and more about the use cases that code supports.
 - Test a pure function ([at 1:00](https://epicreact.dev/modules/build-an-epic-react-app/unit-testing-solution-01)). Use `msw` to mock network request ([at 1:00](https://epicreact.dev/modules/build-an-epic-react-app/unit-testing-solution-02)).
 - How to know if you're testing the right thing ([at 1:10](https://epicreact.dev/modules/build-an-epic-react-app/unit-testing-solution-05) and [2:35](https://epicreact.dev/modules/build-an-epic-react-app/unit-testing-extra-credit-solution-01-01)). 
