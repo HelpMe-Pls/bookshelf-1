@@ -2,7 +2,7 @@
 
 ## 📝 What I've learnt
 - Use case of the `Symbol` primitive ([at 2:10](https://epicreact.dev/modules/build-an-epic-react-app/testing-hooks-and-components-solution-04)). 
-- Remember, the "customers" of the test ares developers, so you want to make it as easy for them to understand as possible so they can work out what's happening when a test fails.
+- Remember, the "customers" of the test are developers, so you want to make it as easy for them to understand as possible so they can work out what's happening when a test fails.
 - [When](https://kentcdodds.com/blog/aha-testing) to refactor/abstract your tests.
 - Various types of tests:
 1. **Static**: catch typos and type errors as you write the code.
